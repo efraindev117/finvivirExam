@@ -1,0 +1,96 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "2bbdd430676a8f8272c41c34449356cc",
+    "entities": [
+      {
+        "tableName": "weather",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`weather_id` INTEGER NOT NULL, `city_name` TEXT, `timezone` INTEGER, `cod` INTEGER, `coord_lat` REAL, `coord_lon` REAL, `main_temp` REAL, `main_feels_like` REAL, `main_temp_min` REAL, `main_temp_max` REAL, `main_pressure` INTEGER, `main_humidity` INTEGER, `main_sea_level` INTEGER, `main_grnd_level` INTEGER, PRIMARY KEY(`weather_id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "weather_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "city_name",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "timezone",
+            "columnName": "timezone",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "cod",
+            "columnName": "cod",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "coord.lat",
+            "columnName": "coord_lat",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "coord.lon",
+            "columnName": "coord_lon",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "main.temp",
+            "columnName": "main_temp",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "main.feelsLike",
+            "columnName": "main_feels_like",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "main.tempMin",
+            "columnName": "main_temp_min",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "main.tempMax",
+            "columnName": "main_temp_max",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "main.pressure",
+            "columnName": "main_pressure",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "main.humidity",
+            "columnName": "main_humidity",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "main.seaLevel",
+            "columnName": "main_sea_level",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "main.grndLevel",
+            "columnName": "main_grnd_level",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "weather_id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2bbdd430676a8f8272c41c34449356cc')"
+    ]
+  }
+}
